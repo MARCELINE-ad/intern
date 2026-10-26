@@ -1,0 +1,542 @@
+.console {
+  position: relative;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  transition: width 300ms ease, aspect-ratio 300ms ease;
+}
+
+/* =========================
+   PSP
+========================= */
+
+.pspConsole {
+  width: min(95vw, 1200px);
+  aspect-ratio: 800 / 365;
+
+  background-image: url('../../assets/images/psp.png');
+  background-size: cover;
+}
+
+/* =========================
+   ЭЛЕКТРОНИКА
+========================= */
+
+.electronikaConsole {
+  width: min(95vw, 1200px);
+  aspect-ratio: 1206 / 676;
+
+  background-image: url('../../assets/images/electronika.png');
+}
+
+/* =========================
+   BRICK GAME
+========================= */
+
+.brickGameConsole {
+  width: min(65vw, 460px);
+  aspect-ratio: 596 / 918;
+
+  background-image: url('../../assets/images/brick-game.png');
+  background-size: 100% 100%;
+}
+
+/* =========================
+   ЭКРАН
+========================= */
+
+.screen {
+  position: absolute;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+/* Экран PSP */
+.pspConsole .screen {
+  left: 21.7%;
+  top: 11.4%;
+  width: 56.7%;
+  height: 70.5%;
+
+  background: #3b075c;
+  border: 2px solid #dba8ff;
+}
+
+/* Экран Электроники */
+.electronikaConsole .screen {
+  left: 25.7%;
+  top: 21.3%;
+  width: 48.2%;
+  height: 55%;
+
+  color: #172015;
+  background: #aab69b;
+  border: none;
+}
+
+/* Экран Brick Game */
+.brickGameConsole .screen {
+  left: 22%;
+  top: 12.2%;
+  width: 25%;
+  height: 21.9%;
+
+  color: #172015;
+  background: #a7b49a;
+  border: none;
+}
+
+/* =========================
+   КРЕСТОВИНА PSP
+========================= */
+
+.dpad {
+  position: absolute;
+  left: 3.2%;
+  top: 26%;
+  width: 17%;
+
+  aspect-ratio: 1.1;
+}
+
+.dpadUp,
+.dpadDown,
+.dpadLeft,
+.dpadRight {
+  position: absolute;
+  width: 34%;
+  height: 34%;
+}
+
+.dpadUp {
+  top: 0;
+  left: 33%;
+}
+
+.dpadDown {
+  bottom: 0;
+  left: 33%;
+}
+
+.dpadLeft {
+  top: 33%;
+  left: 0;
+}
+
+.dpadRight {
+  top: 33%;
+  right: 0;
+}
+
+/* =========================
+   КНОПКИ PSP
+========================= */
+
+.actionButtons {
+  position: absolute;
+  top: 26%;
+  right: 3%;
+  width: 17%;
+
+  aspect-ratio: 1;
+}
+
+.actionTriangle,
+.actionCircle,
+.actionCross,
+.actionSquare {
+  position: absolute;
+  width: 34%;
+  height: 34%;
+}
+
+.actionTriangle {
+  top: 0;
+  left: 33%;
+}
+
+.actionCircle {
+  top: 33%;
+  right: 0;
+}
+
+.actionCross {
+  bottom: 0;
+  left: 33%;
+}
+
+.actionSquare {
+  top: 33%;
+  left: 0;
+}
+
+/* =========================
+   КНОПКИ ЭЛЕКТРОНИКИ
+========================= */
+
+.electronikaConsole .dpad {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  aspect-ratio: auto;
+}
+
+.electronikaConsole .dpadUp,
+.electronikaConsole .dpadDown,
+.electronikaConsole .dpadLeft,
+.electronikaConsole .dpadRight {
+  width: 8%;
+  height: 14%;
+}
+
+/* Верхняя левая красная кнопка */
+.electronikaConsole .dpadUp {
+  left: 6.5%;
+  top: 61%;
+}
+
+/* Нижняя левая красная кнопка */
+.electronikaConsole .dpadLeft {
+  left: 6.5%;
+  top: 80%;
+}
+
+/* Верхняя правая красная кнопка */
+.electronikaConsole .dpadRight {
+  left: 84.5%;
+  top: 61%;
+}
+
+/* Нижняя правая красная кнопка */
+.electronikaConsole .dpadDown {
+  left: 84.5%;
+  top: 80%;
+}
+
+.electronikaConsole .actionButtons {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  aspect-ratio: auto;
+}
+
+.electronikaConsole .actionCross {
+  display: none;
+}
+
+/* Кнопка «Игра А» — выход в главное меню */
+.electronikaConsole .actionCircle {
+  left: 84%;
+  top: 5%;
+  width: 8%;
+  height: 10%;
+}
+
+/* Кнопка «Игра Б» — пока без действия */
+.electronikaConsole .actionTriangle {
+  display: block;
+  left: 84%;
+  top: 18%;
+  width: 8%;
+  height: 10%;
+}
+
+/* Кнопка «Время» — действие добавим позже */
+.electronikaConsole .actionSquare {
+  display: block;
+  left: 84%;
+  top: 31%;
+  width: 8%;
+  height: 10%;
+}
+
+/* Прозрачные контейнеры не перекрывают кнопки корпуса */
+.electronikaConsole .dpad,
+.electronikaConsole .actionButtons {
+  pointer-events: none;
+}
+
+/* Сами красные и игровые кнопки остаются активными */
+.electronikaConsole .dpadUp,
+.electronikaConsole .dpadDown,
+.electronikaConsole .dpadLeft,
+.electronikaConsole .dpadRight,
+.electronikaConsole .actionCircle,
+.electronikaConsole .actionTriangle,
+.electronikaConsole .actionSquare {
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* =========================
+   КНОПКИ BRICK GAME
+========================= */
+
+.brickGameConsole .dpad {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  //display: none;
+
+  aspect-ratio: auto;
+}
+
+.brickGameConsole .dpadUp,
+.brickGameConsole .dpadDown,
+.brickGameConsole .dpadLeft,
+.brickGameConsole .dpadRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 7%;
+  height: 4.5%;
+  padding: 0;
+
+  color: #7d241e;
+  font-size: 16px;
+  font-weight: 700;
+
+  border-radius: 50%;
+}
+
+/* Верхняя жёлтая кнопка */
+.brickGameConsole .dpadUp {
+  left: 19.2%;
+  top: 61%;
+}
+
+/* Левая жёлтая кнопка */
+.brickGameConsole .dpadLeft {
+  left: 12%;
+  top: 64.8%;
+}
+
+/* Правая жёлтая кнопка */
+.brickGameConsole .dpadRight {
+  left: 26.4%;
+  top: 64.8%;
+}
+
+/* Нижняя жёлтая кнопка */
+.brickGameConsole .dpadDown {
+  left: 19.2%;
+  top: 69.4%;
+}
+.brickGameConsole .actionButtons {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  aspect-ratio: auto;
+}
+
+.brickGameConsole .actionTriangle,
+.brickGameConsole .actionSquare {
+  display: none;
+}
+
+.brickGameConsole .actionCross {
+  left: 47.5%;
+  top: 64%;
+  width: 9%;
+  height: 6%;
+
+  border-radius: 50%;
+}
+
+.brickGameConsole .dpad,
+.brickGameConsole .actionButtons {
+  pointer-events: none;
+}
+
+.brickGameConsole .dpadUp,
+.brickGameConsole .dpadDown,
+.brickGameConsole .dpadLeft,
+.brickGameConsole .dpadRight,
+.brickGameConsole .actionCross,
+.brickGameConsole .actionCircle {
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.brickGameConsole .actionCircle {
+  left: 47%;
+  top: 56.5%;
+  width: 5%;
+  height: 3.5%;
+
+  border-radius: 50%;
+}
+
+/* =========================
+   SELECT И START
+========================= */
+
+.systemButtons {
+  position: absolute;
+  bottom: 9%;
+  left: 74.6%;
+  z-index: 2;
+
+  display: flex;
+  gap: 16px;
+
+  transform: translateX(-50%);
+}
+
+.systemButtons .selectButton,
+.systemButtons .startButton {
+  position: static;
+
+  width: 72px;
+  height: 25px;
+  padding: 0;
+
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* У Электроники нет PSP-кнопок */
+.electronikaConsole .systemButtons {
+  display: none;
+}
+
+/* Пока скрываем PSP START/SELECT на Brick Game */
+.brickGameConsole .systemButtons {
+  display: none;
+}
+
+/* =========================
+   ПИТАНИЕ
+========================= */
+
+.powerIndicator {
+  position: absolute;
+  top: 65.7%;
+  right: 3%;
+  z-index: 4;
+
+  width: 10px;
+  height: 10px;
+
+  background: #101010;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.powerIndicatorOn {
+  background: #35ff65;
+  box-shadow: 0 0 5px #35ff65, 0 0 12px rgb(53 255 101 / 80%);
+}
+
+.console .powerButton {
+  position: absolute;
+  bottom: 9%;
+  left: 19.5%;
+  z-index: 20;
+
+  width: 6%;
+  height: 5%;
+
+  border-radius: 2cap;
+}
+
+/* На Электронике скрываем PSP-питание */
+.electronikaConsole .powerButton,
+.electronikaConsole .powerIndicator {
+  display: none;
+}
+
+/* Кнопка ON/OFF у Brick Game */
+.brickGameConsole .powerButton {
+  left: 17.5%;
+  top: 56%;
+  bottom: auto;
+
+  width: 7%;
+  height: 4.5%;
+
+  z-index: 30;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+.brickGameConsole .powerIndicator {
+  display: none;
+}
+
+/* =========================
+   ВЫКЛЮЧЕННЫЙ ЭКРАН
+========================= */
+
+.console .screenOff {
+  overflow: hidden;
+
+  background: #020203;
+  border-color: #111111;
+  box-shadow: inset 0 0 30px #000000;
+}
+
+/* Выключенный LCD-экран Brick Game */
+.console.brickGameConsole .screenOff {
+  background: #1b211a;
+  border: none;
+  box-shadow: inset 0 0 12px rgb(0 0 0 / 75%), inset 0 0 3px rgb(0 0 0 / 90%);
+}
+
+/* Кликабельные кнопки громкости на корпусе PSP */
+.volumeButtons {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.volumeDownButton,
+.volumeUpButton {
+  position: absolute;
+  bottom: 8.7%;
+  width: 4.5%;
+  height: 5%;
+  padding: 0;
+  color: transparent;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+.volumeDownButton {
+  left: 27.3%;
+}
+
+.volumeUpButton {
+  left: 34.2%;
+}
+
+/* Кликабельная кнопка SOUND на корпусе Brick Game */
+.console .soundButton {
+  position: absolute;
+  left: 36.8%;
+  top: 56.5%;
+  z-index: 12;
+  width: 5%;
+  height: 3.5%;
+  padding: 0;
+  color: transparent;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+}

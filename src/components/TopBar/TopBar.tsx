@@ -9,8 +9,6 @@ const getCurrentTime = () => {
 };
 
 export const TopBar = () => {
-  // useState и useEffect остаются здесь
-
   return (
     <header className={style.topBar}>
       <span className={style.brand}>DRUGOV</span>

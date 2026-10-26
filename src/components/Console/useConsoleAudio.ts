@@ -145,9 +145,7 @@ export const useConsoleAudio = ({ currentScreen, isPowerOn }: UseConsoleAudioOpt
     const playPromise = backgroundAudio.play();
 
     if (playPromise) {
-      playPromise.catch(() => {
-        // Браузер может запретить звук до первого действия пользователя.
-      });
+      playPromise.catch(() => {});
     }
   }, [currentScreen, isAudioUnlocked, isMusicEnabled, isPowerOn, isStartupPlaying]);
 
